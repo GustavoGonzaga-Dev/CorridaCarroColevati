@@ -23,17 +23,14 @@ public class MetodosController extends Thread {
 		this.carro1 = carro1;
 		this.carro2 = carro2;
 		this.nome = nome;
-
 	}
 
 	@Override
 	public void run() {
 		Corrida();
-
 	}
 
 	private void Corrida() {
-
 		try {
 			Thread.sleep(100);
 		} catch (InterruptedException e1) {
@@ -44,16 +41,11 @@ public class MetodosController extends Thread {
 			try {
 				velocidade = aleatorio.nextInt((10) + 1);
 				caminhoAndado += velocidade;
-
 				carro1.setBounds(caminhoAndado + velocidade, 53, 70, 14);
 				velocidade = aleatorio.nextInt((10) + 1);
 				caminhoAndado += velocidade;
 				carro2.setBounds(caminhoAndado + velocidade, 122, 70, 14);
-
 				Thread.sleep(80);
-
-				System.out.println("VELOCIDADE " + velocidade + "caminho andado " + caminhoAndado);
-
 				if (caminhoAndado >= distancia) {
 					lugar++;
 					if (lugar == 1) {
@@ -61,17 +53,10 @@ public class MetodosController extends Thread {
 					} else if (lugar == 2){
 						perdedor.setText(nome);
 					}
-					System.out.println(nome+  " "+ lugar + "º Lugar");
 				} 
-
-			
-
 			} catch (InterruptedException e) {
-
 				e.printStackTrace();
-
 			}
-
 		}
 	}
 
